@@ -3,13 +3,17 @@ syntax on
 filetype plugin indent on
 set autoindent
 set smarttab
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
-" NERDTree Stuff
+" Stolen NERDTree Stuff
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-set tabstop=2 shiftwidth=2
+set tabstop=2 shiftwidth=2      " default tab is two spaces
 
 :set number  " enable line numbers
 
@@ -32,6 +36,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Stolen search stuff
 
 " FZF
 set rtp+=/usr/local/opt/fzf
