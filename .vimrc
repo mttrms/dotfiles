@@ -14,6 +14,8 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 set tabstop=2 shiftwidth=2      " default tab is two spaces
+autocmd VimEnter * wincmd p
+nnoremap <silent> find :NERDTreeFind <CR>" Find file in nerdtree
 
 :set number  " enable line numbers
 
