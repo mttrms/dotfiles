@@ -142,6 +142,30 @@
                             }
                         ]
                     },
+                    "description": "Delete key",
+                    "manipulators": [
+                      {
+                        "from": {
+                          "key_code": "backspace",
+                          "modifiers": {
+                            "mandatory": [
+                              "left_shift",
+                              "left_command",
+                              "left_control",
+                              "left_option"
+                            ],
+                            "optional": [
+                              "caps_lock"
+                            ]
+                          }
+                        },
+                        "to": [
+                          {
+                            "key_code": "delete"
+                          }
+                        ]
+                      }
+                    ]
                     {
                         "description": "Pok3r Media Keys (caps + qwe to Previous Title/Play-Pause/Next)",
                         "manipulators": [
