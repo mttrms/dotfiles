@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/matt/.oh-my-zsh"
+export ZSH="/Users/mttrms/.oh-my-zsh"
 
 # Keys
 source ~/.secrets
@@ -12,7 +12,6 @@ source ~/.secrets
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -71,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git wd)
+plugins=(git wd fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,29 +122,18 @@ export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
 
 # eval "$(helm completion zsh)"
 
-lazynvm() {
-  unset -f nvm node npm
-  export NVM_DIR=~/.nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-}
-
-nvm() {
-  lazynvm 
-  nvm $@
-}
-
-node() {
-  lazynvm
-  node $@
-}
-
-npm() {
-  lazynvm
-  npm $@
-}
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
 alias vim=nvim
 alias vi=nvim
+
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+# eval "$(kubectl completion zsh)"
+# eval "$(helm completion zsh)"
+
+export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
