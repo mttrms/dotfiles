@@ -18,7 +18,6 @@ set backspace=indent,eol,start
 " wrapping / line length
 set linebreak
 set wrap
-autocmd VimResized * | set columns=120
 
 " gutters
 set relativenumber number
