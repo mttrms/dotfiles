@@ -30,6 +30,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-solargraph', 'coc-tsserver']
 
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
 
 " test func
 " function! SplitIfNotOpen(call, fname)

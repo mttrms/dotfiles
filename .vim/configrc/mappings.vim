@@ -16,3 +16,5 @@ nnoremap <Leader><Space> :noh<CR>
 " jump to start / end of line
 nnoremap <Leader>b ^
 nnoremap <Leader>e $
+
+nnoremap <Leader>f :let @+=expand('%:p')<CR>

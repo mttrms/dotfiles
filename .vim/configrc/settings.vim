@@ -9,7 +9,6 @@ set ignorecase
 set smartcase
 set updatetime=100
 
-" 2 spaces
 set tabstop=2 shiftwidth=2 expandtab
 
 " Fix backspace
@@ -20,9 +19,8 @@ set linebreak
 set wrap
 
 " gutters
-set relativenumber number
+set number
 set numberwidth=5
-set signcolumn=yes
 
 :set mouse=a " enable mouse
 
