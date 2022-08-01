@@ -1,0 +1,41 @@
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-qmkbuilder_KBD75_0-if01-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-qmkbuilder_KBD75_0-event-kbd")
+  output (uinput-sink "My KMonad output")
+  fallthrough true
+  cmp-seq ralt    ;; Set the compose key to `RightAlt'
+  cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
+)
+
+(defalias
+  capsToggle (layer-toggle layer1)
+  caps    (tap-next esc @capsToggle)
+  ctrl    (tap-next esc lctl)
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end ins del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =   bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  lctl lmet lalt           spc            ralt rctl cmp  left down right
+)
+
+(deflayer qwerty
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end ins del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =   bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @caps a   s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  lctl lmet lalt           spc            ralt rctl cmp  left down right
+)
+
+(deflayer layer1
+  _  _   _   _   _   _   _   _   _   _   _  _  _  _ _ _ _
+  _  _    _    _    _    _    _    _    _    _    _    _    _  del 
+  _  prev    pp    next    _    _    _    _    _    _    _    brdn    bru    _
+  @caps _   vold    volu    _    _    left down up  rght _    _    _
+  _ _    _    _    _    _    _    _    _    _    _    _ up
+  lctl lmet lalt           spc            ralt rctl cmp  left down right
+)
