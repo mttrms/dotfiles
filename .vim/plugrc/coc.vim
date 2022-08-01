@@ -32,6 +32,12 @@ let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-solargrap
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
 " test func
 " function! SplitIfNotOpen(call, fname)
 "     let bufnum=bufnr(expand(a:fname))
